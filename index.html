@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
+    <title>Drone Zone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <h1>Project 1</h1>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+    </nav>
+
+    <!-- page title header -->
+    <div class="jumbotron jumbotron-fluid" id="header">
+        <div class="container">
+            <h1 class="display-4">DRONE ZONE</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
+
+    <!-- submit info section -->
+    
+        <div class="jumbotron jumbotron-fluid" id="submitSection">
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="email" class="form-control" id="city" placeholder="Kansas City">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select class="form-control" id="state">
+                            <option>Kansas</option>
+                            <option>Missouri</option>
+                            <option>Nebraska</option>
+                            <option>Iowa</option>
+                            <option>Arkansas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- images section -->
+        <div class="jumbotron jumbotron-fluid" id="pictureSection">
+            <div class="container">
+                <h1 class="display-4">IMAGES</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+        
+
+
+
+
 </body>
+
 </html>

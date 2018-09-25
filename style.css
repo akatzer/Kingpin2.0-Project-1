@@ -1,0 +1,15 @@
+#submitSection {
+    width: 25%;
+    float: left;
+    margin: 20px;
+}
+
+#pictureSection {
+    margin: 20px;
+    float: left;
+    width: 69%
+}
+
+#header {
+    margin: 20px;
+}
