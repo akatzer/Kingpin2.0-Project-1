@@ -33,8 +33,13 @@ $(document).ready(function () {
         };
 
         //pushes new input into the database
-        database.ref().push(newContent);
+        
 
+        if (name ==="" && email===""&&city===""&&state===""&& description===""()){
+        }
+        else{
+            database.ref().push(newContent);
+           }
         //clears the form out for the next entry
         $(".form-control").val("");
         $(".form-control-file").val("");
