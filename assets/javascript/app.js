@@ -25,8 +25,8 @@ $(document).ready(function () {
         var state = $("#state :selected").text();
         var description = $("#description").val().trim();
 
-        var fileButton = document.getElementById("file");
-        fileButton.addEventListener('change', function (e) {
+        var file = document.getElementById("file");
+        file.addEventListener('change', function (e) {
             var file = e.target.files[0];
             var storageRef = firebase.storage().ref(file.name);
             storageRef.put(file);
