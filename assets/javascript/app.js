@@ -33,23 +33,39 @@ $(document).ready(function () {
         };
 
         //pushes new input into the database
-        
 
-        if (name ==="" && email===""&&city===""&&state===""&& description===""()){
+
+        if (name === "" && email === "" && city === "" && state === "" && description === ""()) {
         }
-        else{
+        else {
             database.ref().push(newContent);
-           }
+        }
         //clears the form out for the next entry
         $(".form-control").val("");
         $(".form-control-file").val("");
     })
 
+    database.ref().on("child_added", function(childSnapshot){
 
+        //creation of variables based on the snapshot of the database
+        var name = childSnapshot.val().name;
+        var email = childSnapshot.val().email;
+        var city = childSnapshot.val().city;
+        var state = childSnapshot.val().state;
+        var description = childSnapshot.val().description;
 
+     var newCard = $("<div class='card'>").append(
+         $('<img class="card-img-top" src="assets/images/autumn.jpg" alt="Autumn">'),
+         $("<div class='card-body'>"),
+         $("<p class='card-text'>").text("Name: " + name),
+         $("<p class='card-text'>").text("City: " + city),
+        
+     )
+        
 
+        $(".newCard").prepend(newCard)
 
-
+    })
 
 
 
