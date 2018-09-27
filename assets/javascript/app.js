@@ -12,7 +12,9 @@ $(document).ready(function () {
     firebase.initializeApp(config);
 
     // Creating database variable
+
     var database = firebase.database();
+
 
     // click function to capture the user input
     $("#submit").on("click", function (event) {
@@ -22,6 +24,13 @@ $(document).ready(function () {
         var city = $("#city").val().trim();
         var state = $("#state :selected").text();
         var description = $("#description").val().trim();
+
+        var fileButton = document.getElementById("file");
+        fileButton.addEventListener('change', function (e) {
+            var file = e.target.files[0];
+            var storageRef = firebase.storage().ref(file.name);
+            storageRef.put(file);
+        });
 
         //creating the variable object that will push to the database
         var newContent = {
@@ -33,7 +42,12 @@ $(document).ready(function () {
         };
 
         //pushes new input into the database
-        database.ref().push(newContent);
+        if (name === "" && email === "" && city === "" && state === "" && description === ""()) {
+        }
+        else {
+            database.ref().push(newContent);
+        }
+
 
         //clears the form out for the next entry
         $(".form-control").val("");
