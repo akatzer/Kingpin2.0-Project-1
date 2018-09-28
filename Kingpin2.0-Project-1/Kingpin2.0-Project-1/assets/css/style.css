@@ -1,13 +1,11 @@
 #submitSection {
-    width: 450px;
+    width: 100%;
     float: left;
-    margin: 20px;
 }
 
 #pictureSection {
     float: left;
-    width: 1364px;
-    margin: 20px;
+    width: 100%;
 }
 
 #header {
@@ -15,13 +13,12 @@
 }
 
 .card {
-    width: 350px;
+    width: 31%;
     float: left;
-    padding: 10px;
-    margin: 10px;
+    margin: 10px; 
 }
 
-.card-img-top-fluid {
+.card-img-top {
     height: 200px;
 }
 
@@ -45,8 +42,3 @@ body {
 .card-body {
     padding: 0;
 }
-
-#uploader {
-    width: 100%;
-}
-
