@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#url").hide();
 
     //The array of background images, one item is in there as a default so there will always be a background picture available
-    var backgroundImage = ["https://i.ytimg.com/vi/xVYLqWUbyH8/maxresdefault.jpg"];
+    // var backgroundImage = ["https://i.ytimg.com/vi/xVYLqWUbyH8/maxresdefault.jpg"];
 
     // initialize firebase
     var config = {
@@ -20,28 +20,28 @@ $(document).ready(function () {
     // Creating database variable
     var database = firebase.database();
 
-    //this chunk grabs the images within firebase and pushes them to the backgroundImage array 
-    var ref = database.ref();
-    ref.on('value', gotData, errData);
+    // //this chunk grabs the images within firebase and pushes them to the backgroundImage array 
+    // var ref = database.ref();
+    // ref.on('value', gotData, errData);
 
-    function gotData(data) {
+    // function gotData(data) {
 
-        var backgroundImg = data.val();
-        var keys = Object.keys(backgroundImg);
+    //     var backgroundImg = data.val();
+    //     var keys = Object.keys(backgroundImg);
 
-        for (var i = 0; i < keys.length; i++) {
-            var k = keys[i];
-            var image = backgroundImg[k].imageUrl;
-            backgroundImage.push(image);
-            var randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
-            $("body").css("background-image", "url('" + randomImage + "')");
-        }
-    }
+    //     for (var i = 0; i < keys.length; i++) {
+    //         var k = keys[i];
+    //         var image = backgroundImg[k].imageUrl;
+    //         backgroundImage.push(image);
+    //         var randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
+    //         $("body").css("background-image", "url('" + randomImage + "')");
+    //     }
+    // }
 
-    function errData(err) {
-        console.log('Error!');
-        console.log(err);
-    }
+    // function errData(err) {
+    //     console.log('Error!');
+    //     console.log(err);
+    // }
 
     //this grabs the upload status bar and button 
     var uploader = document.getElementById('uploader');
@@ -53,7 +53,7 @@ $(document).ready(function () {
         var file = e.target.files[0];
         //create a store ref
         var storageRef = firebase.storage().ref('images/' + file.name);
-
+        
         storageRef.getDownloadURL().then(function (url) {
             $("#url").text(url);
         });
@@ -65,11 +65,11 @@ $(document).ready(function () {
         task.on('state_changed',
             function progress(snapshot) {
                 var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                uploader.value = percentage;
+                uploader.value = percentage;    
             },
             function error(err) {
             },
-            function complete() {
+            function complete() {    
             }
         );
     });
@@ -119,20 +119,33 @@ $(document).ready(function () {
 
         //creates our new card
         var newCard = $("<div class='card'>").append(
-            $('<img class="card-img-top-fluid" src="' + imageUrl + '" alt="Photo">'),
+            $('<img class="card-img-top-fluid" type="button" class="btn" data-toggle="modal" data-target="#myModal" src="' + imageUrl + '" alt="Photo">'),
             $("<div class='card-body'>"),
-            $("<p class='card-text'>").text("Name: " + name),
+            $("<p class='card-text' id='card-name'>").text("Name: " + name),
             $("<p class='card-text'>").text("City: " + city),
         )
 
         //prepends the new card to the newCard div
         $(".newCard").prepend(newCard)
 
-    })
+        //alters the html of the modal to whatever is tied to the photo
+        $(".card-img-top-fluid").on("click", function () {
+            console.log("HI")
+            imageUrl = $(this).attr("src");
+            console.log(imageUrl);
+            $(".modalImage").attr("src", imageUrl);
+            $(".modal-body").html("<p>").append(
+            $("<p class='card-text'>").text("Contributor: " + name),
+            $("<p class='card-text'>").text("Location of photo: " + city + ", " + state),
+            $("<p class='card-text'>").text("Contact me @ " + email),
+            $("<p class='card-text'>").text("Description: " + description),
+            )
+            
+        })
 
-    //randomizes our background image array to choose the next background image.
-    var randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
-    $("body").css("background-image", "url('" + randomImage + "')");
+        //randomizes our background image array to choose the next background image.
+        // var randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
+        // $("body").css("background-image", "url('" + randomImage + "')");
 
-
-});
+    });
+})
