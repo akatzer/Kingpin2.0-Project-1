@@ -42,3 +42,7 @@ body {
 .card-body {
     padding: 0;
 }
+
+#uploader {
+    width: 100%;
+}
