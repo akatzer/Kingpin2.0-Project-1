@@ -54,10 +54,12 @@ $(document).ready(function () {
         //create a store ref
         var storageRef = firebase.storage().ref('images/' + file.name);
         
+        function getUrl() {
         storageRef.getDownloadURL().then(function (url) {
             $("#url").text(url);
-            setTimeout(getDownloadURL, 1000)
+       
         });
+    }
 
         //upload file
         var task = storageRef.put(file);
@@ -70,9 +72,14 @@ $(document).ready(function () {
             },
             function error(err) {
             },
-            function complete() {    
+            function complete() { 
+                
+                getUrl();
             }
+            
         );
+        
+        
     });
 
     // click function to capture the user input
