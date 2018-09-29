@@ -83,6 +83,7 @@ $(document).ready(function () {
         var state = $("#state :selected").text();
         var description = $("#description").val().trim();
         var imageUrl = $("#url").text();
+        var date = moment().format('MMMM Do YYYY');
 
         //creating the variable object that will push to the database
         var newContent = {
@@ -92,6 +93,7 @@ $(document).ready(function () {
             state: state,
             description: description,
             imageUrl: imageUrl,
+            date: date,
         };
 
         //pushes new input into the database
@@ -116,6 +118,7 @@ $(document).ready(function () {
         var state = childSnapshot.val().state;
         var description = childSnapshot.val().description;
         var imageUrl = childSnapshot.val().imageUrl;
+        var date = childSnapshot.val().date;
 
         //creates our new card
         var newCard = $("<div class='card'>").append(
@@ -123,6 +126,7 @@ $(document).ready(function () {
             $("<p id='card-name'>").text("Contributor : " + name),
             $("<p id='card-city'>").text("Photo Location : " + city + ", " + state),
             $("<p id='card-state'>").text("Contact me : " + email),
+            $("<p id='card-state'>").text("Date Uploaded : " + date),
             
         )
 
