@@ -56,6 +56,7 @@ $(document).ready(function () {
         
         storageRef.getDownloadURL().then(function (url) {
             $("#url").text(url);
+            setTimeout(getDownloadURL, 1000)
         });
 
         //upload file
