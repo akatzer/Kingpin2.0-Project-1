@@ -55,9 +55,12 @@ $(document).ready(function () {
         var storageRef = firebase.storage().ref('images/' + file.name);
         
         storageRef.getDownloadURL().then(function (url) {
-            $("#url").text(url);
-            setTimeout(getDownloadURL, 1000)
+            var img = $('<img>');
+            img.attr('src', storageRef);
+            $("#url").append(img);
         });
+
+        
 
         //upload file
         var task = storageRef.put(file);
