@@ -1,23 +1,24 @@
 #submitSection {
-    width: 300px;
-    float: left;
+    width: 400px;
+   padding: 10px;
     margin: 5px;
 }
 
 #pictureSection {
-    float: right;
-    width: 1100px;
+height: 100%;
+    padding: 10px;
+    width: 950px;
     margin: 5px;
 }
 
 #header {
-   float: center;
+  
     margin: 20px;
     width: 97.5%;
 }
 
 .card {
-    width: 500px;
+    width: 400px;
     float: left;
     padding: 10px;
     margin: 10px;
