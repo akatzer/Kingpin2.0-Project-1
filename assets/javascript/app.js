@@ -2,7 +2,7 @@
 $(document).ready(function () {
     //hiding the <p> that i put the image url in to pull from later
     $("#url").hide();
-
+ 
     //The array of background images, one item is in there as a default so there will always be a background picture available
     // var backgroundImage = ["https://i.ytimg.com/vi/xVYLqWUbyH8/maxresdefault.jpg"];
 
@@ -120,9 +120,10 @@ $(document).ready(function () {
         //creates our new card
         var newCard = $("<div class='card'>").append(
             $('<img class="card-img-top-fluid" type="button" class="btn" data-toggle="modal" data-target="#myModal" src="' + imageUrl + '" alt="Photo">'),
-            $("<div class='card-body'>"),
-            $("<p class='card-text' id='card-name'>").text("Name: " + name),
-            $("<p class='card-text'>").text("City: " + city),
+            $("<p id='card-name'>").text("Contributor : " + name),
+            $("<p id='card-city'>").text("Photo Location : " + city + ", " + state),
+            $("<p id='card-state'>").text("Contact me : " + email),
+            
         )
 
         //prepends the new card to the newCard div
@@ -134,12 +135,12 @@ $(document).ready(function () {
             imageUrl = $(this).attr("src");
             console.log(imageUrl);
             $(".modalImage").attr("src", imageUrl);
-            $(".modal-body").html("<p>").append(
-            $("<p class='card-text'>").text("Contributor: " + name),
-            $("<p class='card-text'>").text("Location of photo: " + city + ", " + state),
-            $("<p class='card-text'>").text("Contact me @ " + email),
-            $("<p class='card-text'>").text("Description: " + description),
-            )
+            // $(".modal-body").html("<p>").append(
+            // $("<p>").text("Contributor: " + name),
+            // $("<p>").text("Location of photo: " + city + ", " + state),
+            // $("<p>").text("Contact me @ " + email),
+            // $("<p>").text("Description: " + description),
+            // )
             
         })
 
@@ -148,4 +149,6 @@ $(document).ready(function () {
         // $("body").css("background-image", "url('" + randomImage + "')");
 
     });
+
+
 })
