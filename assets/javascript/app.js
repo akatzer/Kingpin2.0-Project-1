@@ -57,7 +57,6 @@ $(document).ready(function () {
         function getUrl() {
             storageRef.getDownloadURL().then(function (url) {
                 $("#url").text(url);
-
             });
         }
 
@@ -76,10 +75,7 @@ $(document).ready(function () {
 
                 getUrl();
             }
-
         );
-
-
     });
 
     // click function to capture the user input
@@ -150,13 +146,10 @@ $(document).ready(function () {
             // $("<p>").text("Contact me @ " + email),
             // $("<p>").text("Description: " + description),
             // )
-
         })
-
         //randomizes our background image array to choose the next background image.
         // var randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
         // $("body").css("background-image", "url('" + randomImage + "')");
-
     });
 
     // api calls for geolocation and weather information
@@ -175,19 +168,12 @@ $(document).ready(function () {
                 url: queryURL,
                 method: "GET"
             })
-
+                // function to grab the response and push that information to the weather card on the HTML
                 .then(function (response) {
                     $("#oTemp").text("Temperature: " + Math.floor(response.main.temp) + " Degrees");
                     $("#oWeather").text(response.weather[0].main);
                     console.log(response)
                 })
-
         })
-
-
     });
-
-
-
-
 })
