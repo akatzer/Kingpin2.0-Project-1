@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="col" class="row" id=>
+    <div class="col" class="row">
         <!-- page title header -->
         <div class="jumbotron jumbotron-fluid" id="header">
             <div class="container">
@@ -20,132 +20,134 @@
                 <p class="lead"> Because taking photos on the ground is for chumps.</p>
             </div>
         </div>
+        </div>
 
         <!-- submit info section -->
         <div class="container-fluid">
-            <div class="row fullWidth">
-                <div class="col-4">
-                    <div class="jumbotron jumbotron-fluid" id="submitSection">
-                        <div class="container">
-                            <form>
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="John Smith">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                                </div>
-                                <div class="form-group">
-                                    <label for="city">City</label>
-                                    <input type="email" class="form-control" id="city" placeholder="Kansas City">
-                                </div>
-                                <div class="form-group">
-                                    <label for="state">State</label>
-                                    <select class="form-control" id="state">
-                                        <option></option>
-                                        <option>Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>Arizona</option>
-                                        <option>Arkansas</option>
-                                        <option>California</option>
-                                        <option>Colorado</option>
-                                        <option>Connecticut</option>
-                                        <option>Delaware</option>
-                                        <option>Florida</option>
-                                        <option>Georgia</option>
-                                        <option>Hawaii</option>
-                                        <option>Idaho</option>
-                                        <option>Illinois</option>
-                                        <option>Indiana</option>
-                                        <option>Iowa</option>
-                                        <option>Kansas</option>
-                                        <option>Kentucky</option>
-                                        <option>Louisiana</option>
-                                        <option>Maine</option>
-                                        <option>Maryland</option>
-                                        <option>Massachusetts</option>
-                                        <option>Michigan</option>
-                                        <option>Minnesota</option>
-                                        <option>Mississippi</option>
-                                        <option>Missouri</option>
-                                        <option>Montana</option>
-                                        <option>Nebraska</option>
-                                        <option>Nevada</option>
-                                        <option>New Hampshire</option>
-                                        <option>New Jersey</option>
-                                        <option>New Mexico</option>
-                                        <option>New York</option>
-                                        <option>North Carolina</option>
-                                        <option>North Dakota</option>
-                                        <option>Ohio</option>
-                                        <option>Oklahoma</option>
-                                        <option>Oregon</option>
-                                        <option>Pennsylvania</option>
-                                        <option>Rhode Island</option>
-                                        <option>South Carolina</option>
-                                        <option>South Dakota</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Utah</option>
-                                        <option>Vermont</option>
-                                        <option>Virginia</option>
-                                        <option>Washington</option>
-                                        <option>West Virginia</option>
-                                        <option>Wisconsin</option>
-                                        <option>Wyoming</option>
-                                    </select>
-                                </div>
+            <div class="row" id="shift">
+                <div class="col-md-4 col-sm-12" id="submitSection">
 
-                                <!-- progress bar on upload button -->
-                                <progress value="0" max="100" id="uploader">0%</progress>
-                                <input type="file" value="upload" id="fileButton" />
-                                <p id="url"></p>
-                                <br>
-                                <br>
-                            </form>
-                            <button id="submit">Submit</button>
 
-                            <!-- weather card below the submit button -->
-                            <div class="card" style="width: 20rem;" id="locWeather">
-                                <div class="card-body">
-                                    <h3 class="card-title" id="gLoc"></h3>
-                                    <p class="card-text" id="oTemp"></p>
-                                    <p class="card-text" id="oWeather"></p>
-                                </div>
-                            </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="email" class="form-control" id="city" placeholder="Kansas City">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select class="form-control" id="state">
+                                <option></option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>Idaho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option>Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option>Massachusetts</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Utah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                            </select>
+                        </div>
+
+                        <!-- progress bar on upload button -->
+                        <progress value="0" max="100" id="uploader">0%</progress>
+                        <input type="file" value="upload" id="fileButton" />
+                        <p id="url"></p>
+                        <br>
+                        <br>
+                    </form>
+                    <button id="submit">Submit</button>
+
+                    <!-- weather card below the submit button -->
+                    <div class="card" style="width: 20rem;" id="locWeather">
+                        <div class="card-body">
+                            <h3 class="card-title" id="gLoc"></h3>
+                            <p class="card-text" id="oTemp"></p>
+                            <p class="card-text" id="oWeather"></p>
                         </div>
                     </div>
+
                 </div>
+
 
                 <!-- images section -->
-                <div class="col-8">
-                    <div class="jumbotron jumbotron-fluid" id="pictureSection">
-                        <div class="container">
-                            <h1 class="display-4">IMAGES</h1>
-                            <p class="lead">Sick photo bromigo.</p>
-                            <div class="newCard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <div class="col-md-7 col-sm-12" id="pictureSection">
 
-        <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <img class="modalImage">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+
+                    <h1 class="display-4">IMAGES</h1>
+                    <p class="lead">Sick photo bromigo.</p>
+                    <div class="newCard">
                     </div>
+
+
                 </div>
             </div>
         </div>
+    
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="modalImage">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- JS code -->
