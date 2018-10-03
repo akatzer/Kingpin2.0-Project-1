@@ -136,7 +136,7 @@ $(document).ready(function () {
 
 		//alters the html of the modal to whatever is tied to the photo
 		$(".card-img-top-fluid").on("click", function () {
-			console.log("HI")
+			// console.log("HI")
 			imageUrl = $(this).attr("src");
 			console.log(imageUrl);
 			$(".modalImage").attr("src", imageUrl);
